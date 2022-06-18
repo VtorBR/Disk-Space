@@ -2,7 +2,7 @@ project('io.github.vtorbr.disk_space', 'vala', 'c')
 
 executable(
     meson.project_name(),
-    'src' / 'Application.vala',
+    'source' / 'Application.vala',
     dependencies: [
         dependency('gtk+-3.0')
     ],
@@ -10,13 +10,13 @@ executable(
 )
 
 install_data(
-    'data' / 'disk_space.desktop',
+    'data' / 'disk-space.desktop',
     install_dir: get_option('datadir') / 'applications',
     rename: meson.project_name() + '.desktop'
 )
 
 install_data(
-    'data' / 'disk_space.metainfo.xml',
+    'data' / 'disk-space.metainfo.xml',
     install_dir: get_option('datadir') / 'metainfo',
     rename: meson.project_name() + '.metainfo.xml'
 )
