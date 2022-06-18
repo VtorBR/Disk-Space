@@ -12,12 +12,12 @@ public class MyApp : Gtk.Application {
     }
     
     protected override void activate () {
-        var label = new Gtk.Label ("OK");
+        var label = new Gtk.Label (_("OK"));
         
         var main_window = new Gtk.ApplicationWindow (this) {
             default_width = 800,
             default_height = 600,
-            title = "Disk Space"
+            title = _("Disk Space")
         };
         
         main_window.add (label);

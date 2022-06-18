@@ -1,5 +1,9 @@
 project('io.github.vtorbr.disk_space', 'vala', 'c')
 
+i18n = import('i18n')
+
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
+
 executable(
     meson.project_name(),
     'source' / 'Application.vala',
@@ -9,15 +13,22 @@ executable(
     install: true
 )
 
-install_data(
-    'data' / 'disk-space.desktop',
-    install_dir: get_option('datadir') / 'applications',
-    rename: meson.project_name() + '.desktop'
+i18n.merge_file(
+    input: 'data' / 'disk-space.desktop.in',
+    output: meson.project_name() + '.desktop',
+    po_dir: meson.source_root() / 'po',
+    type: 'desktop',
+    install: true,
+    install_dir: get_option('datadir') / 'applications'
 )
 
-install_data(
-    'data' / 'disk-space.metainfo.xml',
-    install_dir: get_option('datadir') / 'metainfo',
-    rename: meson.project_name() + '.metainfo.xml'
+i18n.merge_file(
+    input: 'data' / 'disk-space.metainfo.xml.in',
+    output: meson.project_name() + '.metainfo.xml',
+    po_dir: meson.source_root() / 'po',
+    install: true,
+    install_dir: get_option('datadir') / 'applications'
 )
+
+subdir('po')
 

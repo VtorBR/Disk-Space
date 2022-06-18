@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.vtorbr.disk_space package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.vtorbr.disk_space\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-18 19:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: source/Application.vala:15
+msgid "OK"
+msgstr ""
+
+#: source/Application.vala:20 data/disk-space.desktop.in:6
+#: data/disk-space.metainfo.xml.in:5
+msgid "Disk Space"
+msgstr ""
+
+#: data/disk-space.desktop.in:7 data/disk-space.metainfo.xml.in:6
+msgid "Disk space usage visualization tool"
+msgstr ""
+
+#: data/disk-space.desktop.in:10
+msgid "application-default-icon"
+msgstr ""
+
+#: data/disk-space.metainfo.xml.in:12
+msgid "Displays disk usage as a tree map."
+msgstr ""

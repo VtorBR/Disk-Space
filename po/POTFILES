@@ -1,0 +1,4 @@
+source/Application.vala
+data/disk-space.desktop.in
+data/disk-space.metainfo.xml.in
+

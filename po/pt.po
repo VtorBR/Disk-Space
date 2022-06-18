@@ -1,0 +1,39 @@
+# Portuguese translations for io.github.vtorbr.disk_space package.
+# Copyright (C) 2022 THE io.github.vtorbr.disk_space'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.vtorbr.disk_space package.
+# Automatically generated, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.vtorbr.disk_space\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-18 19:32+0000\n"
+"PO-Revision-Date: 2022-06-18 19:32+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: source/Application.vala:15
+msgid "OK"
+msgstr ""
+
+#: source/Application.vala:20 data/disk-space.desktop.in:6
+#: data/disk-space.metainfo.xml.in:5
+msgid "Disk Space"
+msgstr ""
+
+#: data/disk-space.desktop.in:7 data/disk-space.metainfo.xml.in:6
+msgid "Disk space usage visualization tool"
+msgstr ""
+
+#: data/disk-space.desktop.in:10
+msgid "application-default-icon"
+msgstr ""
+
+#: data/disk-space.metainfo.xml.in:12
+msgid "Displays disk usage as a tree map."
+msgstr ""
