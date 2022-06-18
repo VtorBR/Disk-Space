@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vtorbr.disk_space</id>
+  
+  <name>Disk Space</name>
+  <summary>Disk space usage visualization tool</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      Displays disk usage as a tree map.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.vtorbr.disk_space.desktop</launchable>
+  
+  <custom>
+    <value key="x-appcenter-color-primary">#603461</value>
+    <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
+  </custom>
+</component>
+

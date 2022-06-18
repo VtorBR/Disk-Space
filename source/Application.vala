@@ -1,7 +1,12 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * SPDX-FileCopyrightText: 2022 Vítor Fernandes <vitor_resende@ymail.com>
+ */
+ 
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
-            application_id: "io.github.vtorbr.disk-space",
+            application_id: "io.github.vtorbr.disk_space",
             flags: ApplicationFlags.FLAGS_NONE
         );
     }

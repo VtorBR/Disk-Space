@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Disk Space
+Comment=Disk space usage visualization tool
+Categories=Utility;GTK;
+
+Icon=application-default-icon
+Exec=io.github.vtorbr.disk_space
+Terminal=false
+
