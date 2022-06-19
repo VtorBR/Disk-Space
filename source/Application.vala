@@ -12,16 +12,26 @@ public class MyApp : Gtk.Application {
     }
     
     protected override void activate () {
-        var first_button = new Gtk.Button.with_label (_("A button"));
-        var first_label = new Gtk.Label (null);
+        var file_title = new Gtk.Label (_("Select a folder: "))
+        {
+            halign = Gtk.Align.END
+        };
         
-        var second_button = new Gtk.Button.with_label (_("Another button"));
-        var second_label = new Gtk.Label (_("Horizontal"));
+        var file_button = new Gtk.FileChooserButton (
+            _("Select folder"),
+            Gtk.FileChooserAction.SELECT_FOLDER
+        );
+        
+        var start_button = new Gtk.Button.with_label (_("Start")) {
+            sensitive = false
+        };
         
         var grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 6,
             column_spacing = 6,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER
         };
         
         var main_window = new Gtk.ApplicationWindow (this) {
@@ -30,23 +40,19 @@ public class MyApp : Gtk.Application {
             title = _("Disk Space")
         };
         
-        grid.attach(first_button, 0, 0, 1, 1);
-        grid.attach_next_to(first_label, first_button, Gtk.PositionType.RIGHT, 1, 1);
-        
-        grid.attach(second_button, 0, 1);
-        grid.attach_next_to(second_label, second_button, Gtk.PositionType.RIGHT, 1, 1);
+        grid.attach(file_title, 0, 2);
+        grid.attach(file_button, 1, 2);
+        grid.attach(start_button, 0, 3, 2, 1);
         
         main_window.add (grid);
         
-        first_button.clicked.connect (() => {
-            first_label.label = _("You clicked!");
-            first_button.sensitive = false;
+        file_button.selection_changed.connect (() => {
+            start_button.sensitive = file_button.get_filename() != null;
         });
         
-        second_button.clicked.connect (() => {
-            second_label.angle = 90;
-            second_label.label = _("What?");
-            second_button.sensitive = false;
+        start_button.clicked.connect (() => {
+            file_button.sensitive = false;
+            message (file_button.get_filename());
         });
         
         main_window.show_all ();
