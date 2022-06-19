@@ -1,0 +1,20 @@
+app-id: io.github.vtorbr.disk_space
+
+runtime: io.elementary.Platform
+runtime-version: '6.1'
+sdk: io.elementary.Sdk
+
+command: io.github.vtorbr.disk_space
+
+finish-args:
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+
+modules:
+  - name: disk-space
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
+
