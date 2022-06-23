@@ -7,6 +7,7 @@ add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), la
 executable(
     meson.project_name(),
     'source' / 'Application.vala',
+    'source' / 'Window.vala',
     dependencies: [
         dependency('gtk+-3.0')
     ],
