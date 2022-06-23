@@ -9,7 +9,8 @@ executable(
     'source' / 'Application.vala',
     'source' / 'Window.vala',
     dependencies: [
-        dependency('gtk+-3.0')
+        dependency('gtk+-3.0'),
+        dependency('granite')
     ],
     install: true
 )

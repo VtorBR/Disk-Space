@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: MIT
  * SPDX-FileCopyrightText: 2022 Vítor Fernandes <vitor_resende@ymail.com>
  */
-
+ 
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
@@ -12,7 +12,6 @@ public class MyApp : Gtk.Application {
     }
     
     protected override void activate () {
-        Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
         MyWindow main_window = new MyWindow(this);
         main_window.show_all ();
     }

@@ -2,55 +2,46 @@
  * SPDX-License-Identifier: MIT
  * SPDX-FileCopyrightText: 2022 Vítor Fernandes <vitor_resende@ymail.com>
  */
- 
- public class MyWindow : Gtk.ApplicationWindow {
-     public MyWindow (Gtk.Application app) {
-         Object (
-             application: app
-         );
-     }
-     
-     construct {
+
+public class MyWindow : Gtk.ApplicationWindow {
+    public MyWindow (Gtk.Application app) {
+        Object (
+            application: app
+        );
+    }
+    
+    construct {
+        var welcome_widget = new Granite.Widgets.Welcome (
+            _("No Folder Selected"),
+            _("Select a folder to begin.")
+        );
+        
+        welcome_widget.append ("folder-open", _("Select folder"), _("Select a folder to analyze."));
+        welcome_widget.activated.connect ((index) => {
+            switch (index) {
+                case 0:
+                    var folder_chooser = new Gtk.FileChooserNative (
+                        _("Select Folder"),
+                        this,
+                        Gtk.FileChooserAction.SELECT_FOLDER,
+                        _("Select"),
+                        _("Cancel")
+                    );
+                    
+                    if (folder_chooser.run () == Gtk.ResponseType.ACCEPT) {
+                        folder_chooser.visible = false;
+                        message (folder_chooser.get_filename ());
+                        folder_chooser.destroy ();
+                    }
+                    
+                    break;
+            }
+        });
+        
         this.default_width = 800;
         this.default_height = 600;
         this.title = _("Disk Space");
-        
-        var file_title = new Gtk.Label (_("Select a folder: "))
-        {
-            halign = Gtk.Align.END
-        };
-        
-        var file_button = new Gtk.FileChooserButton (
-            _("Select folder"),
-            Gtk.FileChooserAction.SELECT_FOLDER
-        );
-        
-        var start_button = new Gtk.Button.with_label (_("Start")) {
-            sensitive = false
-        };
-        
-        var grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6,
-            column_spacing = 6,
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER
-        };
-        
-        grid.attach(file_title, 0, 2);
-        grid.attach(file_button, 1, 2);
-        grid.attach(start_button, 0, 3, 2, 1);
-        
-        this.add (grid);
-        
-        file_button.selection_changed.connect (() => {
-            start_button.sensitive = file_button.get_filename() != null;
-        });
-        
-        start_button.clicked.connect (() => {
-            file_button.sensitive = false;
-            message (file_button.get_filename());
-        });
-     }
- }
- 
+        this.add (welcome_widget);
+    }
+}
+
